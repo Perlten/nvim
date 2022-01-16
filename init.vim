@@ -17,6 +17,8 @@ set mouse=a
 set colorcolumn=80
 set clipboard=unnamedplus
 set so=999
+set relativenumber
+set rnu
 highlight ColorColumn ctermbg=0 guibg=lightgray
 
 call plug#begin('~/.config/nvim/plugged') 
@@ -38,6 +40,8 @@ Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'github/copilot.vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
@@ -51,6 +55,9 @@ autocmd vimenter * ++nested colorscheme gruvbox
 let g:ctrlp_show_hidden = 1
 
 let mapleader = " " 
+
+inoremap jj <Esc>
+
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -74,7 +81,7 @@ nnoremap <leader>wqa :wqa<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>cp :CtrlPClearAllCaches<CR>
+nnoremap <leader>cp :CtrlPClearCache<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 nnoremap <leader>dd :call vimspector#Launch()<CR>

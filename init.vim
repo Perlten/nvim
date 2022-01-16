@@ -34,7 +34,6 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'puremourning/vimspector'
 Plug 'sbdchd/neoformat'
-Plug 'mbbill/undotree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
@@ -42,6 +41,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
@@ -51,6 +51,9 @@ set completeopt=menu,menuone,noselect
 let g:completion_enable_snippet = 'vim-vsnip'
 
 autocmd vimenter * ++nested colorscheme gruvbox
+set cursorline
+set cursorlineopt=number
+autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
 
 let g:ctrlp_show_hidden = 1
 
@@ -74,7 +77,7 @@ nnoremap <leader>wj :resize -5<CR>
 nnoremap <leader>wk :resize +5<CR>
 
 nnoremap <leader>f :Neoformat<CR>
-nnoremap <leader>w :w<CR>
+nnoremap <leader>ww :w<CR>
 nnoremap <leader>wa :wa<CR>
 nnoremap <leader>wqa :wqa<CR>
 
@@ -97,6 +100,9 @@ nnoremap <leader>dcb :call vimspector#ClearBreakpoints()<CR>
 " harpoon
 nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
+
+nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
+nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 
 let i = 1
 while i <= 9

@@ -138,3 +138,4 @@ nnoremap <leader>gaa :Git add --all<CR>
 nnoremap <leader>ga :Git add<CR>
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gl :Git log<CR>

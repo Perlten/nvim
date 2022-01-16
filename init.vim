@@ -42,6 +42,7 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
@@ -59,11 +60,10 @@ let g:ctrlp_show_hidden = 1
 
 let mapleader = " " 
 
+set updatetime=100
+
 inoremap jj <Esc>
-
-
-:tnoremap <Esc> <C-\><C-n>
-
+tnoremap jj <C-\><C-n>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>

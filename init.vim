@@ -61,6 +61,10 @@ let mapleader = " "
 
 inoremap jj <Esc>
 
+
+:tnoremap <Esc> <C-\><C-n>
+
+
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>

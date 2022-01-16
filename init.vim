@@ -134,4 +134,7 @@ while i <= 9
     let i = i + 1
 endwhile
 
-
+nnoremap <leader>gaa :Git add --all<CR>
+nnoremap <leader>ga :Git add<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gp :Git push<CR>

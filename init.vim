@@ -43,6 +43,7 @@ Plug 'github/copilot.vim'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua

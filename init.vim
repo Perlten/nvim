@@ -1,0 +1,119 @@
+syntax on
+
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+set incsearch
+set mouse=a
+set colorcolumn=80
+set clipboard=unnamedplus
+set so=999
+highlight ColorColumn ctermbg=0 guibg=lightgray
+
+call plug#begin('~/.config/nvim/plugged') 
+Plug 'git@github.com:kien/ctrlp.vim.git'
+Plug 'mbbill/undotree'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'puremourning/vimspector'
+Plug 'sbdchd/neoformat'
+Plug 'mbbill/undotree'
+Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
+call plug#end()
+
+:luafile ~/.config/nvim/lua/_cmp.lua
+:luafile ~/.config/nvim/lua/_lsp.lua
+
+set completeopt=menu,menuone,noselect
+let g:completion_enable_snippet = 'vim-vsnip'
+
+autocmd vimenter * ++nested colorscheme gruvbox
+
+let g:ctrlp_show_hidden = 1
+
+let mapleader = " " 
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>q :q<CR>
+
+nnoremap <leader>tq :tabclose<CR>
+
+nnoremap <leader>wsv :vsplit<CR>
+nnoremap <leader>wsh :split<CR>
+nnoremap <leader>wl :vertical resize +10<CR>
+nnoremap <leader>wh :vertical resize -10<CR>
+nnoremap <leader>wj :resize -5<CR>
+nnoremap <leader>wk :resize +5<CR>
+
+nnoremap <leader>f :Neoformat<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>wa :wa<CR>
+nnoremap <leader>wqa :wqa<CR>
+
+nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>cp :CtrlPClearAllCaches<CR>
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <leader>dj :call vimspector#StepOver()<CR>
+nnoremap <leader>dl :call vimspector#StepInto()<CR>
+nnoremap <leader>dh :call vimspector#StepOut()<CR>
+nnoremap <leader>dx :call vimspector#RunToCursor()<CR>
+nnoremap <leader>dc :call vimspector#Continue()<CR>
+nnoremap <leader>dr :call vimspector#Restart()<CR>
+nnoremap <leader>ds :call vimspector#Stop()<CR>
+nnoremap <leader>dcb :call vimspector#ClearBreakpoints()<CR>
+" harpoon
+nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
+
+let i = 1
+while i <= 9
+    execute 'nnoremap <leader>h' . i . ' :lua require("harpoon.ui").nav_file('.i .')<CR>'
+    let i = i + 1
+endwhile
+
+"move line up and down 
+nnoremap <A-S-j> :m .+1<CR>==
+nnoremap <A-S-k> :m .-2<CR>==
+inoremap <A-S-j> <Esc>:m .+1<CR>==gi
+inoremap <A-S-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-S-j> :m '>+1<CR>gv=gv
+vnoremap <A-S-k> :m '<-2<CR>gv=gv
+"move in insert mode with alt
+inoremap <A-h> <C-o>h
+inoremap <A-j> <C-o>j
+inoremap <A-k> <C-o>k
+inoremap <A-l> <C-o>l
+
+let i = 1
+while i <= 9
+    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+    let i = i + 1
+endwhile
+
+

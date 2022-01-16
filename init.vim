@@ -135,7 +135,7 @@ while i <= 9
 endwhile
 
 nnoremap <leader>gaa :Git add --all<CR>
-nnoremap <leader>ga :Git add<CR>
+nnoremap <leader>ga :Git add
 nnoremap <leader>gc :Git commit<CR>
-nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git log<CR>

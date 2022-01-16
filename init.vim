@@ -46,6 +46,8 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
+
+
 :luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_lsp.lua
 

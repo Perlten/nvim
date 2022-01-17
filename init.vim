@@ -163,9 +163,10 @@ nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files p
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
+nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
 nnoremap <leader>fif <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>fds <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 " Ranger    
 let g:ranger_map_keys = 0

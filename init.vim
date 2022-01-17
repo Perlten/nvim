@@ -47,6 +47,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'szw/vim-maximizer'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
@@ -68,6 +69,8 @@ set updatetime=100
 
 inoremap jj <Esc>
 tnoremap jj <C-\><C-n>
+
+nnoremap <leader>m :MaximizerToggle<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -153,3 +156,4 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
 nnoremap <leader>fif <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>fc <cmd>Telescope commands<cr>

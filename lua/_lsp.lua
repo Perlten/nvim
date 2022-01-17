@@ -1,39 +1,36 @@
-local nvim_lsp = require('lspconfig')
+local lsp_installer = require("nvim-lsp-installer")
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
 
-  -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
 
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions'
-  buf_set_keymap('n', '<leader>aclr', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
-  buf_set_keymap('n', '<leader>aws', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
-  buf_set_keymap('n', '<leader>agd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>ah', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '<leader>agi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<leader>ash', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<leader>arn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', '<space>af', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+local keymap = vim.api.nvim_set_keymap
 
-  buf_set_keymap('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+local opts = { noremap=true, silent=true }
+local function nkeymap(key, map)
+    keymap('n', key, map, opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
+nkeymap('<leader>agd', ':lua vim.lsp.buf.definition()<cr>')
+nkeymap('<leader>agD', ':lua vim.lsp.buf.declaration()<cr>')
+nkeymap('<leader>agi', ':lua vim.lsp.buf.implementation()<cr>')
+nkeymap('<leader>agw', ':lua vim.lsp.buf.document_symbol()<cr>')
+nkeymap('<leader>as', ':Telescope lsp_dynamic_workspace_symbols<cr>')
+nkeymap('<leader>ar', ':Telescope lsp_references<cr>')
+nkeymap('<leader>agt', ':lua vim.lsp.buf.type_definition()<cr>')
+nkeymap('<leader>ah', ':lua vim.lsp.buf.hover()<cr>')
+nkeymap('<leader>ash', ':lua vim.lsp.buf.signature_help()<cr>')
+nkeymap('<leader>ac', ':lua vim.lsp.buf.code_action()<cr>')
+nkeymap('<leader>arn', ':lua vim.lsp.buf.rename()<cr>')
+keymap('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)

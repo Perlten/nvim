@@ -24,6 +24,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgray
 call plug#begin('~/.config/nvim/plugged') 
 Plug 'mbbill/undotree'
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -50,6 +51,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'szw/vim-maximizer'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
@@ -71,6 +73,11 @@ set updatetime=100
 
 inoremap ii <Esc>
 tnoremap ii <C-\><C-n>
+
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
+vnoremap <TAB> >gv
+vnoremap <S-TAB> <gv
 
 nnoremap <leader>m :MaximizerToggle<CR>
 

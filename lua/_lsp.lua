@@ -14,7 +14,6 @@ lsp_installer.on_server_ready(function(server)
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     server:setup(opts)
 end)
-
 local keymap = vim.api.nvim_set_keymap
 
 local opts = { noremap=true, silent=true }
@@ -22,6 +21,8 @@ local function nkeymap(key, map)
     keymap('n', key, map, opts)
 end
 
+
+nkeymap('<leader>af',  ':lua vim.diagnostic.open_float()<CR>')
 nkeymap('<leader>agd', ':lua vim.lsp.buf.definition()<cr>')
 nkeymap('<leader>agD', ':lua vim.lsp.buf.declaration()<cr>')
 nkeymap('<leader>agi', ':lua vim.lsp.buf.implementation()<cr>')

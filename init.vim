@@ -22,7 +22,6 @@ set rnu
 highlight ColorColumn ctermbg=0 guibg=lightgray
 
 call plug#begin('~/.config/nvim/plugged') 
-Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'mbbill/undotree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -44,10 +43,13 @@ Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_lsp.lua
+:luafile ~/.config/nvim/lua/_treesitter.lua
 
 set completeopt=menu,menuone,noselect
 let g:completion_enable_snippet = 'vim-vsnip'
@@ -56,8 +58,6 @@ autocmd vimenter * ++nested colorscheme gruvbox
 set cursorline
 set cursorlineopt=number
 autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
-
-let g:ctrlp_show_hidden = 1
 
 let mapleader = " " 
 
@@ -88,8 +88,7 @@ nnoremap <leader>wqa :wqa<CR>
 
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>cp :CtrlPClearCache<CR>
+
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 nnoremap <leader>dd :call vimspector#Launch()<CR>
@@ -139,3 +138,13 @@ nnoremap <leader>ga :Git add
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gs :Telescope git_status<CR> 
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
+nnoremap <leader>fk <cmd>Telescope keymaps<cr>

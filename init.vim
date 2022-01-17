@@ -45,11 +45,14 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_lsp.lua
 :luafile ~/.config/nvim/lua/_treesitter.lua
+:luafile ~/.config/nvim/lua/_lualine.lua
 
 set completeopt=menu,menuone,noselect
 let g:completion_enable_snippet = 'vim-vsnip'

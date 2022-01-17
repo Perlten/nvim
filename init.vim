@@ -54,8 +54,8 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-:luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_lsp.lua
+:luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_treesitter.lua
 :luafile ~/.config/nvim/lua/_lualine.lua
 :luafile ~/.config/nvim/lua/_telescope.lua
@@ -106,7 +106,7 @@ nnoremap <leader>wqa :wqa<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>sv :silent! source ~/.config/nvim/init.vim<CR>
 
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
@@ -179,3 +179,5 @@ vnoremap <c-l> $
 vnoremap <c-h> 0
 inoremap <c-a-l> $
 inoremap <c-a-h> 0
+
+:luafile ~/.config/nvim/lua/_cmp_keybinds.lua

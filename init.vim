@@ -171,3 +171,15 @@ let g:ranger_map_keys = 0
 nnoremap <leader>e :RangerWorkingDirectory<CR>
 " Termianl 
 nnoremap <leader>ter :term<CR>
+" Go to start and end of line
+nnoremap <c-l> $
+nnoremap <c-h> 0
+vnoremap <c-l> $
+vnoremap <c-h> 0
+inoremap <c-a-l> $
+inoremap <c-a-h> 0
+
+
+
+
+

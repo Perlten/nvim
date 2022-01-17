@@ -162,3 +162,5 @@ nnoremap <leader>fc <cmd>Telescope commands<cr>
 " Ranger    
 let g:ranger_map_keys = 0
 nnoremap <leader>e :RangerWorkingDirectory<CR>
+" Termianl 
+nnoremap <leader>ter :term<CR>

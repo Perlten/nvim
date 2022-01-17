@@ -177,7 +177,5 @@ nnoremap <c-l> $
 nnoremap <c-h> 0
 vnoremap <c-l> $
 vnoremap <c-h> 0
-inoremap <c-a-l> $
-inoremap <c-a-h> 0
 
-:luafile ~/.config/nvim/lua/_cmp_keybinds.lua
+:luafile ~/.config/nvim/lua/_lsp_keybinds.lua

@@ -48,6 +48,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'szw/vim-maximizer'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_cmp.lua
@@ -67,8 +69,8 @@ let mapleader = " "
 
 set updatetime=100
 
-inoremap jj <Esc>
-tnoremap jj <C-\><C-n>
+inoremap ii <Esc>
+tnoremap ii <C-\><C-n>
 
 nnoremap <leader>m :MaximizerToggle<CR>
 
@@ -157,3 +159,6 @@ nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
 nnoremap <leader>fif <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
+" Ranger    
+let g:ranger_map_keys = 0
+nnoremap <leader>e :RangerWorkingDirectory<CR>

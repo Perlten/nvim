@@ -21,7 +21,6 @@ local function nkeymap(key, map)
     keymap('n', key, map, opts)
 end
 
-
 nkeymap('<leader>af',  ':lua vim.diagnostic.open_float()<CR>')
 nkeymap('<leader>agd', ':lua vim.lsp.buf.definition()<cr>')
 nkeymap('<leader>agD', ':lua vim.lsp.buf.declaration()<cr>')
@@ -32,6 +31,6 @@ nkeymap('<leader>ar', ':Telescope lsp_references<cr>')
 nkeymap('<leader>agt', ':lua vim.lsp.buf.type_definition()<cr>')
 nkeymap('<leader>ah', ':lua vim.lsp.buf.hover()<cr>')
 nkeymap('<leader>ash', ':lua vim.lsp.buf.signature_help()<cr>')
-nkeymap('<leader>ac', ':lua vim.lsp.buf.code_action()<cr>')
+nkeymap('<leader>aca', ':lua vim.lsp.buf.code_action()<cr>')
 nkeymap('<leader>arn', ':lua vim.lsp.buf.rename()<cr>')
 keymap('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)

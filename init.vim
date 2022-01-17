@@ -58,6 +58,7 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_lsp.lua
 :luafile ~/.config/nvim/lua/_treesitter.lua
 :luafile ~/.config/nvim/lua/_lualine.lua
+:luafile ~/.config/nvim/lua/_telescope.lua
 
 set completeopt=menu,menuone,noselect
 let g:completion_enable_snippet = 'vim-vsnip'
@@ -96,7 +97,7 @@ nnoremap <leader>wh :vertical resize -10<CR>
 nnoremap <leader>wj :resize -5<CR>
 nnoremap <leader>wk :resize +5<CR>
 
-nnoremap <leader>f :Neoformat<CR>
+nnoremap <leader>fd :Neoformat<CR>
 nnoremap <leader>ww :w<CR>
 nnoremap <leader>wa :wa<CR>
 nnoremap <leader>wq :wq<CR>
@@ -158,7 +159,7 @@ nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Telescope git_status<CR> 
 
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files prompt_prefix=🔍<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -178,8 +179,3 @@ vnoremap <c-l> $
 vnoremap <c-h> 0
 inoremap <c-a-l> $
 inoremap <c-a-h> 0
-
-
-
-
-

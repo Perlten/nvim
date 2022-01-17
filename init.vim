@@ -84,6 +84,7 @@ nnoremap <leader>wk :resize +5<CR>
 nnoremap <leader>f :Neoformat<CR>
 nnoremap <leader>ww :w<CR>
 nnoremap <leader>wa :wa<CR>
+nnoremap <leader>wq :wq<CR>
 nnoremap <leader>wqa :wqa<CR>
 
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -148,3 +149,4 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
+nnoremap <leader>fif <cmd>Telescope current_buffer_fuzzy_find<cr>

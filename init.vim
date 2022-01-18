@@ -55,14 +55,12 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua
-:luafile ~/.config/nvim/lua/_lsp_keybinds.lua
 :luafile ~/.config/nvim/lua/_treesitter.lua
 :luafile ~/.config/nvim/lua/_lualine.lua
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
 
 set completeopt=menu,menuone,noselect
-let g:completion_enable_snippet = 'vim-vsnip'
 
 autocmd vimenter * ++nested colorscheme gruvbox
 set cursorline
@@ -72,7 +70,9 @@ autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
 let mapleader = " " 
 
 set updatetime=100
-nnoremap <a-i> <Nop>
+
+noremap <a-i> <Nop>
+map <a-i> <Esc>
 inoremap <a-i> <Esc>
 tnoremap <a-i> <C-\><C-n>
 cnoremap <a-i> <C-C> 
@@ -181,3 +181,4 @@ nnoremap <c-h> 0
 vnoremap <c-l> $
 vnoremap <c-h> 0
 
+:luafile ~/.config/nvim/lua/_lsp_keybinds.lua

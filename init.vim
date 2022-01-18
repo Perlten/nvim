@@ -55,10 +55,11 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua
-:luafile ~/.config/nvim/lua/_cmp.lua
+:luafile ~/.config/nvim/lua/_lsp_keybinds.lua
 :luafile ~/.config/nvim/lua/_treesitter.lua
 :luafile ~/.config/nvim/lua/_lualine.lua
 :luafile ~/.config/nvim/lua/_telescope.lua
+:luafile ~/.config/nvim/lua/_cmp.lua
 
 set completeopt=menu,menuone,noselect
 let g:completion_enable_snippet = 'vim-vsnip'
@@ -71,9 +72,10 @@ autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
 let mapleader = " " 
 
 set updatetime=100
-
-inoremap ii <Esc>
-tnoremap ii <C-\><C-n>
+nnoremap <a-i> <Nop>
+inoremap <a-i> <Esc>
+tnoremap <a-i> <C-\><C-n>
+cnoremap <a-i> <C-C> 
 
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
@@ -106,7 +108,7 @@ nnoremap <leader>wqa :wqa<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-nnoremap <leader>sv :silent! source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
@@ -179,4 +181,3 @@ nnoremap <c-h> 0
 vnoremap <c-l> $
 vnoremap <c-h> 0
 
-:luafile ~/.config/nvim/lua/_lsp_keybinds.lua

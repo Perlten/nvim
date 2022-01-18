@@ -173,6 +173,7 @@ nnoremap <leader>fc <cmd>Telescope commands<cr>
 " Ranger    
 let g:ranger_map_keys = 0
 nnoremap <leader>e :RangerWorkingDirectory<CR>
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 " Termianl 
 nnoremap <leader>ter :term<CR>
 " Go to start and end of line
@@ -180,5 +181,3 @@ nnoremap <c-l> $
 nnoremap <c-h> 0
 vnoremap <c-l> $
 vnoremap <c-h> 0
-
-:luafile ~/.config/nvim/lua/_lsp_keybinds.lua

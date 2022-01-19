@@ -36,6 +36,9 @@ Plug 'puremourning/vimspector'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' } 
+Plug 'EdenEast/nightfox.nvim'
+Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
@@ -59,10 +62,15 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_lualine.lua
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
+:luafile ~/.config/nvim/lua/_nightfox.lua
 
 set completeopt=menu,menuone,noselect
 
+colorscheme gruvbox 
 autocmd vimenter * ++nested colorscheme gruvbox
+
+autocmd VimEnter * Copilot disable
+
 set cursorline
 set cursorlineopt=number
 autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
@@ -83,6 +91,7 @@ vnoremap <TAB> >gv
 vnoremap <S-TAB> <gv
 
 nnoremap <leader>m :MaximizerToggle<CR>
+nnoremap <leader>sc :noh<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -99,7 +108,7 @@ nnoremap <leader>wh :vertical resize -10<CR>
 nnoremap <leader>wj :resize -5<CR>
 nnoremap <leader>wk :resize +5<CR>
 
-nnoremap <leader>fd :Neoformat<CR>
+nnoremap <leader>fdn :Neoformat<CR>
 nnoremap <leader>ww :w<CR>
 nnoremap <leader>wa :wa<CR>
 nnoremap <leader>wq :wq<CR>

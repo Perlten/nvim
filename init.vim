@@ -62,7 +62,7 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_lualine.lua
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
-:luafile ~/.config/nvim/lua/_nightfox.lua
+" :luafile ~/.config/nvim/lua/_nightfox.lua
 
 set completeopt=menu,menuone,noselect
 

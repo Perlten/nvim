@@ -30,8 +30,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
 Plug 'puremourning/vimspector'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
@@ -52,6 +50,8 @@ Plug 'szw/vim-maximizer'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
+Plug 'L3MON4D3/LuaSnip'    
+Plug 'saadparwaiz1/cmp_luasnip'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua

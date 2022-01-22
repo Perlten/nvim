@@ -95,6 +95,14 @@ vnoremap <S-TAB> <gv
 
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>sc :noh<CR>
+nnoremap <leader>pwd :! pwd <CR>
+
+" removes always cut 
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+nnoremap c "_c
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -122,6 +130,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
+" Vimspector
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <leader>dj :call vimspector#StepOver()<CR>
@@ -132,6 +141,14 @@ nnoremap <leader>dc :call vimspector#Continue()<CR>
 nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>ds :call vimspector#Stop()<CR>
 nnoremap <leader>dcb :call vimspector#ClearBreakpoints()<CR>
+
+let g:vimspector_sign_priority = {
+            \ 'vimspectorBP':         200, 
+            \ 'vimspectorBPCond':     200, 
+            \ 'vimspectorBPLog':      200,
+            \ 'vimspectorBPDisabled': 200
+            \ }
+
 " harpoon
 nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
@@ -153,16 +170,17 @@ inoremap <A-S-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-S-j> :m '>+1<CR>gv=gv
 vnoremap <A-S-k> :m '<-2<CR>gv=gv
 "move in insert mode with alt
-inoremap <A-h> <C-o>h
-inoremap <A-j> <C-o>j
-inoremap <A-k> <C-o>k
-inoremap <A-l> <C-o>l
+inoremap <A-h> <left>
+inoremap <A-j> <down>
+inoremap <A-k> <up>
+inoremap <A-l> <right>
 
 let i = 1
 while i <= 9
     execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
     let i = i + 1
 endwhile
+nnoremap <leader><tab> <c-w><c-p> 
 
 " Git
 nnoremap <leader>gaa :Git add --all<CR>

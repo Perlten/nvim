@@ -39,3 +39,11 @@ lsp_installer.on_server_ready(
     end
 )
 
+require "lsp_signature".setup(
+    {
+        floating_window = false,
+        handler_opts = {
+            border = "none" -- double, rounded, single, shadow, none
+        }
+    }
+)

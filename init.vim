@@ -56,6 +56,8 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
 Plug 'L3MON4D3/LuaSnip'    
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'ray-x/lsp_signature.nvim'
+
 "Gradle
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'aloussase/gradle.nvim'
@@ -147,6 +149,8 @@ nnoremap <leader>dc :call vimspector#Continue()<CR>
 nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>ds :call vimspector#Stop()<CR>
 nnoremap <leader>dcb :call vimspector#ClearBreakpoints()<CR>
+nmap <Leader>di <Plug>VimspectorBalloonEval
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 let g:vimspector_sign_priority = {
             \ 'vimspectorBP':         200, 

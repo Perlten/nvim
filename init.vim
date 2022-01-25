@@ -56,6 +56,9 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
 Plug 'L3MON4D3/LuaSnip'    
 Plug 'saadparwaiz1/cmp_luasnip'
+"Gradle
+Plug 'mfussenegger/nvim-jdtls'
+Plug 'aloussase/gradle.nvim'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua
@@ -185,6 +188,7 @@ while i <= 9
 endwhile
 nnoremap <leader><tab> <c-w><c-p> 
 
+" Git
 nnoremap <leader>gaa :Git add --all<CR>
 nnoremap <leader>ga :Git add
 nnoremap <leader>gc :Git commit<CR>
@@ -192,6 +196,15 @@ nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Telescope git_status<CR> 
+
+" Spring 
+nnoremap <leader>sp f(
+nnoremap <leader>swp f(a
+nnoremap <leader>scp f(ci(
+
+nnoremap <leader>sq f"
+nnoremap <leader>swq f"a
+nnoremap <leader>scq f"ci"
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files prompt_prefix=🔍<cr>
@@ -205,7 +218,8 @@ nnoremap <leader>fds <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 " Ranger    
 let g:ranger_map_keys = 0
-nnoremap <leader>e :RangerWorkingDirectory<CR>
+nnoremap <leader>ee :RangerWorkingDirectory<CR>
+nnoremap <leader>ec :RangerCurrentFile<CR>
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 " Termianl 
 nnoremap <leader>ter :term<CR>

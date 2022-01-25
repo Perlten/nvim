@@ -19,6 +19,7 @@ set clipboard=unnamedplus
 set so=999
 set relativenumber
 set rnu
+set backspace=indent,eol,start
 highlight ColorColumn ctermbg=0 guibg=lightgray
 
 call plug#begin('~/.config/nvim/plugged') 
@@ -79,11 +80,15 @@ let mapleader = " "
 
 set updatetime=100
 
-noremap <a-i> <Nop>
-map <a-i> <Esc>
-inoremap <a-i> <Esc>
-tnoremap <a-i> <C-\><C-n>
-cnoremap <a-i> <C-C> 
+" Movement
+nnoremap <c-j> 20j
+nnoremap <c-k> 20k
+
+noremap <a-s> <Nop>
+map <a-s> <Esc>
+inoremap <a-s> <Esc>
+tnoremap <a-s> <C-\><C-n>
+cnoremap <a-s> <C-C> 
 
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
@@ -100,6 +105,7 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 nnoremap c "_c
+imap <Bs> <C-W>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>

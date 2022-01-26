@@ -17,22 +17,31 @@ local function setLspKeymaps()
     keymap("n", "<leader>lsh", ":lua vim.lsp.buf.signature_help()<cr>", map_opts)
     keymap("n", "<leader>lca", ":lua vim.lsp.buf.code_action()<CR>", map_opts)
     keymap("n", "<leader>lrn", ":lua vim.lsp.buf.rename()<cr>", map_opts)
+    keymap("n", "<leader>lfn", ":lua vim.lsp.buf.formatting()<cr>", map_opts)
     keymap("i", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", map_opts)
 end
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
+local function setup_pyright(opts, server)
+    if server.name == "pyright" then
+        opts = {
+            settings = {
+                python = {
+                    analysis = {
+                        typeCheckingMode = "off"
+                    }
+                }
+            }
+        }
+    end
+    return opts
+end
+
+-- This setup() function is exactly the same as lspconfig's setup function.
+-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp_installer.on_server_ready(
     function(server)
         local opts = {}
-
-        -- (optional) Customize the options passed to the server
-        -- if server.name == "tsserver" then
-        --     opts.root_dir = function() ... end
-        -- end
-
-        -- This setup() function is exactly the same as lspconfig's setup function.
-        -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        opts = setup_pyright(opts, server)
         server:setup(opts)
 
         setLspKeymaps()

@@ -43,7 +43,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-commentary'
-Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -57,6 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'L3MON4D3/LuaSnip'    
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'goolord/alpha-nvim'
 
 "Gradle
 Plug 'mfussenegger/nvim-jdtls'
@@ -68,7 +68,7 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_lualine.lua
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
-" :luafile ~/.config/nvim/lua/_nightfox.lua
+:luafile ~/.config/nvim/lua/_alpha.lua
 
 set completeopt=menu,menuone,noselect
 
@@ -86,23 +86,34 @@ let mapleader = " "
 set updatetime=100
 
 " Movement
-nnoremap <c-j> 20j
-nnoremap <c-k> 20k
+nnoremap <c-j> 10j
+nnoremap <c-k> 10k
 
+
+nnoremap <a-l> $
+nnoremap <a-h> 0
+vnoremap <a-l> $
+vnoremap <a-h> 0
+
+nnoremap <c-l> w
+nnoremap <c-h> b
+vnoremap <c-l> w
+vnoremap <c-h> b
+" Escape
 noremap <a-s> <Nop>
 map <a-s> <Esc>
 inoremap <a-s> <Esc>
 tnoremap <a-s> <C-\><C-n>
 cnoremap <a-s> <C-C> 
-
+" Indent
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
 vnoremap <TAB> >gv
 vnoremap <S-TAB> <gv
-
+" Random
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>sc :noh<CR>
-nnoremap <leader>pwd :! pwd <CR>
+nnoremap <leader>pwd :!pwd <CR>
 
 " removes always cut 
 nnoremap x "_x
@@ -227,8 +238,8 @@ nnoremap <leader>ec :RangerCurrentFile<CR>
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 " Termianl 
 nnoremap <leader>ter :term<CR>
-" Go to start and end of line
-nnoremap <c-l> $
-nnoremap <c-h> 0
-vnoremap <c-l> $
-vnoremap <c-h> 0
+
+" Inserts
+let g:AutoPairsShortcutToggle = 'none'
+inoremap <A-p> ()<Left> 
+inoremap <A-c> {}<Left> 

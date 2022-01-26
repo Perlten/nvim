@@ -1,20 +1,10 @@
 local cmp = require "cmp"
 local luasnip = require "luasnip"
 
-
-
-
-
--- local function test(a, b)
---     local c = a+ b
---     print(c)
--- end
-
-
 cmp.setup {
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            require("luasnip").lsp_expand(args.body)
         end
     },
     mapping = {
@@ -50,7 +40,7 @@ cmp.setup {
     sources = {
         {name = "nvim_lsp"},
         {name = "luasnip"},
-        {name = "buffer", keyword_length = 5}
+        {name = "buffer", keyword_length = 5},
     }
 }
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

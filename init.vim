@@ -38,7 +38,6 @@ Plug 'morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' } 
 Plug 'EdenEast/nightfox.nvim'
 Plug 'joshdick/onedark.vim'
-Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
@@ -89,6 +88,8 @@ set updatetime=100
 nnoremap <c-j> 10j
 nnoremap <c-k> 10k
 
+vnoremap <c-j> 10j
+vnoremap <c-k> 10k
 
 nnoremap <a-l> $
 nnoremap <a-h> 0
@@ -123,10 +124,6 @@ vnoremap d "_d
 nnoremap c "_c
 imap <Bs> <C-W>
 
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :q<CR>
 
 nnoremap <leader>tq :tabclose<CR>
@@ -145,7 +142,6 @@ nnoremap <leader>wq :wq<CR>
 nnoremap <leader>wqa :wqa<CR>
 
 nnoremap <leader>u :UndotreeToggle<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
 
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
@@ -174,14 +170,14 @@ let g:vimspector_sign_priority = {
 nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
 
-nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
-nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-
 let i = 1
 while i <= 9
     execute 'nnoremap <leader>h' . i . ' :lua require("harpoon.ui").nav_file('.i .')<CR>'
     let i = i + 1
 endwhile
+
+nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
+nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 
 "move line up and down 
 nnoremap <A-S-j> :m .+1<CR>==
@@ -211,15 +207,6 @@ nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Telescope git_status<CR> 
-
-" Spring 
-nnoremap <leader>sp f(
-nnoremap <leader>swp f(a
-nnoremap <leader>scp f(ci(
-
-nnoremap <leader>sq f"
-nnoremap <leader>swq f"a
-nnoremap <leader>scq f"ci"
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files prompt_prefix=🔍<cr>

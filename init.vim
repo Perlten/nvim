@@ -42,7 +42,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-commentary'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
@@ -56,6 +56,8 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'goolord/alpha-nvim'
+Plug 'mogelbrod/vim-jsonpath'
+Plug 'tpope/vim-abolish' 
 
 "Gradle
 Plug 'mfussenegger/nvim-jdtls'
@@ -148,6 +150,7 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 " Vimspector
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <leader>dcb :call vimspector#ToggleBreakpoint({ 'condition': '' })<left><left><left><left>
 nnoremap <leader>dj :call vimspector#StepOver()<CR>
 nnoremap <leader>dl :call vimspector#StepInto()<CR>
 nnoremap <leader>dh :call vimspector#StepOut()<CR>
@@ -155,7 +158,7 @@ nnoremap <leader>dx :call vimspector#RunToCursor()<CR>
 nnoremap <leader>dc :call vimspector#Continue()<CR>
 nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>ds :call vimspector#Stop()<CR>
-nnoremap <leader>dcb :call vimspector#ClearBreakpoints()<CR>
+nnoremap <leader>dccb :call vimspector#ClearBreakpoints()<CR>
 nmap <Leader>di <Plug>VimspectorBalloonEval
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
@@ -207,9 +210,9 @@ nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Telescope git_status<CR> 
-
+nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files prompt_prefix=🔍<cr>
+nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>

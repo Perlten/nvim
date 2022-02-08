@@ -6,7 +6,9 @@ require("telescope").setup {
             ".venv",
             "plugged/",
             "undodir/",
-           "lib/"
+            "lib/",
+            "__pycache__/",
+            ".pytest_cache/"
         }
     },
     pickers = {

@@ -117,7 +117,8 @@ vnoremap <S-TAB> <gv
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>sc :noh<CR>
 nnoremap <leader>pwd :!pwd <CR>
-
+nnoremap <leader>cp :let @+ = expand("%") <CR>
+nnoremap <leader>cfp :let @+ = expand("%:p")<CR>
 " removes always cut 
 nnoremap x "_x
 nnoremap d "_d
@@ -230,6 +231,6 @@ let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 nnoremap <leader>ter :term<CR>
 
 " Inserts
-let g:AutoPairsShortcutToggle = 'none'
+" let g:AutoPairsShortcutToggle = False
 inoremap <A-p> ()<Left> 
 inoremap <A-c> {}<Left> 

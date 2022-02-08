@@ -8,6 +8,8 @@ require("telescope").setup {
             "undodir/",
             "lib/",
             "target"
+            "__pycache__/",
+            ".pytest_cache/"
         }
     },
     pickers = {

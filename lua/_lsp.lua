@@ -18,6 +18,7 @@ local function setLspKeymaps()
     keymap("n", "<leader>lca", ":lua vim.lsp.buf.code_action()<CR>", map_opts)
     keymap("n", "<leader>lrn", ":lua vim.lsp.buf.rename()<cr>", map_opts)
     keymap("n", "<leader>lfn", ":lua vim.lsp.buf.formatting()<cr>", map_opts)
+    keymap("n", "<leader>ll", ":LspRestart<cr>", map_opts)
     keymap("i", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", map_opts)
 end
 

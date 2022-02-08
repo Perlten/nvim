@@ -70,6 +70,7 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_alpha.lua
+    :luafile ~/.config/nvim/lua/_keybindings.lua
 
 set completeopt=menu,menuone,noselect
 
@@ -124,7 +125,7 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 nnoremap c "_c
-imap <Bs> <C-W>
+imap <C-BS> :! echo test
 
 nnoremap <leader>q :q<CR>
 
@@ -158,6 +159,7 @@ nnoremap <leader>dx :call vimspector#RunToCursor()<CR>
 nnoremap <leader>dc :call vimspector#Continue()<CR>
 nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>ds :call vimspector#Stop()<CR>
+nnoremap <leader>dq :VimspectorReset<CR>
 nnoremap <leader>dccb :call vimspector#ClearBreakpoints()<CR>
 nmap <Leader>di <Plug>VimspectorBalloonEval
 xmap <Leader>di <Plug>VimspectorBalloonEval
@@ -233,3 +235,7 @@ nnoremap <leader>ter :term<CR>
 let g:AutoPairsShortcutToggle = 'none'
 inoremap <A-p> ()<Left> 
 inoremap <A-c> {}<Left> 
+
+" Cargo
+nnoremap <leader>cr :! cargo run <CR>
+nnoremap <leader>cb :! cargo build <CR>

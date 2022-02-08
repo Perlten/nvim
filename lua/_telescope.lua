@@ -6,7 +6,8 @@ require("telescope").setup {
             ".venv",
             "plugged/",
             "undodir/",
-           "lib/"
+            "lib/",
+            "target"
         }
     },
     pickers = {

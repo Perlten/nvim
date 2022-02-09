@@ -58,6 +58,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'goolord/alpha-nvim'
 Plug 'mogelbrod/vim-jsonpath'
 Plug 'tpope/vim-abolish' 
+Plug 'kamykn/spelunker.vim'
 
 "Gradle
 Plug 'mfussenegger/nvim-jdtls'
@@ -227,10 +228,17 @@ let g:ranger_map_keys = 0
 nnoremap <leader>ee :RangerWorkingDirectory<CR>
 nnoremap <leader>ec :RangerCurrentFile<CR>
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
-" Termianl 
+" Terminal 
 nnoremap <leader>ter :term<CR>
 
 " Inserts
 " let g:AutoPairsShortcutToggle = False
 inoremap <A-p> ()<Left> 
 inoremap <A-c> {}<Left> 
+" Spell
+set nospell
+highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
+highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE
+
+nmap <leader>ss Zl
+nmap <leader>sa Zg

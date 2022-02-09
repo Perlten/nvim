@@ -71,6 +71,7 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_alpha.lua
+    :luafile ~/.config/nvim/lua/_keybindings.lua
 
 set completeopt=menu,menuone,noselect
 
@@ -126,7 +127,7 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 nnoremap c "_c
-imap <Bs> <C-W>
+imap <C-BS> :! echo test
 
 nnoremap <leader>q :q<CR>
 
@@ -160,6 +161,7 @@ nnoremap <leader>dx :call vimspector#RunToCursor()<CR>
 nnoremap <leader>dc :call vimspector#Continue()<CR>
 nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>ds :call vimspector#Stop()<CR>
+nnoremap <leader>dq :VimspectorReset<CR>
 nnoremap <leader>dccb :call vimspector#ClearBreakpoints()<CR>
 nmap <Leader>di <Plug>VimspectorBalloonEval
 xmap <Leader>di <Plug>VimspectorBalloonEval
@@ -235,6 +237,7 @@ nnoremap <leader>ter :term<CR>
 " let g:AutoPairsShortcutToggle = False
 inoremap <A-p> ()<Left> 
 inoremap <A-c> {}<Left> 
+
 " Spell
 set nospell
 highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
@@ -242,3 +245,7 @@ highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underl
 
 nmap <leader>ss Zl
 nmap <leader>sa Zg
+
+" Cargo
+nnoremap <leader>cr :! cargo run <CR>
+nnoremap <leader>cb :! cargo build <CR>

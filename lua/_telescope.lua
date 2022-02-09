@@ -7,6 +7,7 @@ require("telescope").setup {
             "plugged/",
             "undodir/",
             "lib/",
+            "target",
             "__pycache__/",
             ".pytest_cache/"
         }

@@ -33,14 +33,10 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'puremourning/vimspector'
 Plug 'sbdchd/neoformat'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' } 
-Plug 'EdenEast/nightfox.nvim'
-Plug 'joshdick/onedark.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
-Plug 'github/copilot.vim'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -71,14 +67,11 @@ call plug#end()
 :luafile ~/.config/nvim/lua/_telescope.lua
 :luafile ~/.config/nvim/lua/_cmp.lua
 :luafile ~/.config/nvim/lua/_alpha.lua
-    :luafile ~/.config/nvim/lua/_keybindings.lua
+:luafile ~/.config/nvim/lua/_keybindings.lua
 
 set completeopt=menu,menuone,noselect
 
 colorscheme gruvbox 
-autocmd vimenter * ++nested colorscheme gruvbox
-
-autocmd VimEnter * Copilot disable
 
 set cursorline
 set cursorlineopt=number

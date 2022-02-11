@@ -55,7 +55,6 @@ Plug 'goolord/alpha-nvim'
 Plug 'mogelbrod/vim-jsonpath'
 Plug 'tpope/vim-abolish' 
 Plug 'kamykn/spelunker.vim'
-
 "Gradle
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'aloussase/gradle.nvim'
@@ -72,6 +71,7 @@ call plug#end()
 set completeopt=menu,menuone,noselect
 
 colorscheme gruvbox 
+highlight Normal guifg=#e0e0e0 guibg=#262626 gui=NONE ctermfg=254 ctermbg=235 cterm=NONE
 
 set cursorline
 set cursorlineopt=number

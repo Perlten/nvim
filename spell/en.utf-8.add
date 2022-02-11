@@ -49,3 +49,5 @@ virk
 minioadmin
 kibana
 elasticsearch
+lualine
+treesitter

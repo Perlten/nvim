@@ -122,7 +122,6 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 nnoremap c "_c
-imap <C-BS> :! echo test
 
 nnoremap <leader>q :q<CR>
 
@@ -229,7 +228,6 @@ let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 nnoremap <leader>ter :term<CR>
 nnoremap <leader>tt :FloatermToggle<CR>
 tnoremap <leader>tq <C-\><C-n>:q<CR>
-
 " Spell
 set nospell
 highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e

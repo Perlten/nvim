@@ -55,6 +55,8 @@ Plug 'goolord/alpha-nvim'
 Plug 'mogelbrod/vim-jsonpath'
 Plug 'tpope/vim-abolish' 
 Plug 'kamykn/spelunker.vim'
+
+Plug 'voldikss/vim-floaterm'
 "Gradle
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'aloussase/gradle.nvim'
@@ -225,6 +227,8 @@ nnoremap <leader>ec :RangerCurrentFile<CR>
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 " Terminal 
 nnoremap <leader>ter :term<CR>
+nnoremap <leader>tt :FloatermToggle<CR>
+tnoremap <leader>tq <C-\><C-n>:q<CR>
 
 " Spell
 set nospell

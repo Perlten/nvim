@@ -233,11 +233,6 @@ let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 " Terminal 
 nnoremap <leader>ter :term<CR>
 
-" Inserts
-" let g:AutoPairsShortcutToggle = False
-inoremap <A-p> ()<Left> 
-inoremap <A-c> {}<Left> 
-
 " Spell
 set nospell
 highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e

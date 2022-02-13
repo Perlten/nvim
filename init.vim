@@ -48,18 +48,12 @@ Plug 'szw/vim-maximizer'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
-Plug 'L3MON4D3/LuaSnip'    
-Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'goolord/alpha-nvim'
 Plug 'mogelbrod/vim-jsonpath'
 Plug 'tpope/vim-abolish' 
 Plug 'kamykn/spelunker.vim'
-
 Plug 'voldikss/vim-floaterm'
-"Gradle
-Plug 'mfussenegger/nvim-jdtls'
-Plug 'aloussase/gradle.nvim'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua

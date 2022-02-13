@@ -1,9 +1,6 @@
 local cmp = require "cmp"
 local luasnip = require "luasnip"
 
--- vim.opt.spell = true
--- vim.opt.spelllang = {"en_us"}
-
 cmp.setup {
     snippet = {
         expand = function(args)

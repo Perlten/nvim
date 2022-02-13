@@ -51,3 +51,7 @@ kibana
 elasticsearch
 lualine
 treesitter
+vimspector
+cmdline
+lspconfig
+args

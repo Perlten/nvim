@@ -55,3 +55,6 @@ vimspector
 cmdline
 lspconfig
 args
+aggs
+traceback
+hostname

@@ -58,6 +58,8 @@ Plug 'mogelbrod/vim-jsonpath'
 Plug 'tpope/vim-abolish' 
 Plug 'kamykn/spelunker.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua

@@ -240,3 +240,8 @@ nmap <leader>sa Zg
 " Cargo
 nnoremap <leader>cr :! cargo run <CR>
 nnoremap <leader>cb :! cargo build <CR>
+
+
+" Neoformat
+let g:neoformat_python_black = {'args': ["-l 79"], "exe": "black", "replace": 1 }
+let g:neoformat_enabled_python = ["black"]

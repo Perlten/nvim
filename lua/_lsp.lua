@@ -37,12 +37,24 @@ local function setup_pyright(opts, server)
     return opts
 end
 
+local function setup_arduino(opts, server)
+    if server.name == "arduino_language_server" then
+        opts.on_new_config = function(config, _)
+            local partial_cmd = server:get_default_options().cmd
+            local MY_FQBN = "arduino:avr:uno"
+            config.cmd = vim.list_extend(partial_cmd, {"-fqbn", MY_FQBN})
+        end
+    end
+    return opts
+end
+
 -- This setup() function is exactly the same as lspconfig's setup function.
 -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp_installer.on_server_ready(
     function(server)
         local opts = {}
         opts = setup_pyright(opts, server)
+        opts = setup_arduino(opts, server)
         server:setup(opts)
 
         setLspKeymaps()

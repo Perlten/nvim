@@ -59,7 +59,8 @@ Plug 'tpope/vim-abolish'
 Plug 'kamykn/spelunker.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
+" Plug 'preservim/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua

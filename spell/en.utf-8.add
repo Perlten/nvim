@@ -58,6 +58,9 @@ args
 aggs
 traceback
 hostname
+msgs
+minitwit
+qtile
 pythonpath
 opensearch
 getenv
@@ -68,8 +71,6 @@ xray
 auth
 auth
 auth
-opensearch
-opensearch
 opensearch
 slugify
 postgres

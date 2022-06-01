@@ -59,8 +59,7 @@ Plug 'tpope/vim-abolish'
 Plug 'kamykn/spelunker.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'godlygeek/tabular'
-" Plug 'preservim/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'preservim/vim-markdown'
 call plug#end()
 
 :luafile ~/.config/nvim/lua/_lsp.lua
@@ -242,6 +241,10 @@ nnoremap <leader>cr :! cargo run <CR>
 nnoremap <leader>cb :! cargo build <CR>
 
 
-" Neoformat
+" Formatting
+nmap <leader>fsn :! pg_format -w 100 -i -p '\%.*s' %<CR> 
 let g:neoformat_python_black = {'args': ["-l 79"], "exe": "black", "replace": 1 }
 let g:neoformat_enabled_python = ["black"]
+
+let g:vim_markdown_folding_disabled = 1
+
